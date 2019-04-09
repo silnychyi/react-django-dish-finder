@@ -1,0 +1,834 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,700');
+
+
+@font-face {
+font-family: 'Gotham Pro';
+font-style: normal;
+font-weight: normal;
+src: local('Gotham Pro'), url('./fonts/GothaProReg.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Gotham Pro Black';
+font-style: normal;
+font-weight: normal;
+src: local('Gotham Pro Black'), url('./fonts/GothaProBla.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Gotham Pro Light';
+font-style: normal;
+font-weight: normal;
+src: local('Gotham Pro Light'), url('./fonts/GothaProLig.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Gotham Pro Medium';
+font-style: normal;
+font-weight: normal;
+src: local('Gotham Pro Medium'), url('./fonts/GothaProMed.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Gotham Pro Light Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Gotham Pro Light Italic'), url('./fonts/GothaProLigIta.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Gotham Pro Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Gotham Pro Bold'), url('./fonts/GothaProBol.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'GothamPro-MediumItalic';
+font-style: normal;
+font-weight: normal;
+src: local('GothamPro-MediumItalic'), url('./fonts/GothamProMediumItalic.woff') format('woff');
+}
+
+
+@keyframes fadeInMove {
+    0% {
+        transform: translateY(-15px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    width: fit-content;
+    color: inherit;
+}
+
+body {
+    font-family: 'Gotham Pro';
+    margin: 0px;
+    background-color: #1b1f2a;
+}
+.container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.App {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(./images/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.Home {
+    height: calc(100vh - 70px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-delay: 200ms;
+    animation-duration: 1500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+
+.Home h1 {
+    color: #fff;
+    text-shadow: 4px 3px 6px #0000007a;
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+}
+
+.Header {
+    margin: 0 20px;
+    min-height: 70px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: fadeIn;
+    animation-duration: 1500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+} 
+
+.logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    line-height: 70px;
+    font-family: 'Gotham Pro Bold';
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #fff;
+}
+
+.show-all-button {
+    font-family: 'Gotham Pro Medium';
+    background-color: #ffffffe1;
+    box-shadow: 0px 4px 10px #0000007a;
+    border: none;
+    color: #540B0E;
+    font-size: 25px;
+    padding: 13px 25px 10px;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    transition: 200ms
+}
+
+.show-all-button:hover {
+    box-shadow: 0px 8px 15px #00000086;
+}
+
+.content {
+    height: calc(100% - 80px);
+}
+
+.Search {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.Search form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.search-input {
+    border: none;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 500px;
+    font-size: 23px;
+    padding: 8px 25px;
+    color: #540B0E;
+    outline: none;
+    box-shadow: 0px 4px 10px #0000007a;
+    transition: 200ms;
+}
+
+.search-input::placeholder {
+    color: #33333340;
+    text-align: center;
+}
+.search-input:focus {
+    box-shadow: 0px 12px 20px #00000086;
+}
+
+.search-input-submit {
+    box-sizing: border-box;
+    margin-left: 5px;
+    border: none;
+    background-color: transparent;
+    border-radius: 8px;
+    font-size: 23px;
+    padding: 10px 23px;
+    line-height: 100%;
+    width: 85px;
+    color: #fff;
+    outline: none;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.search-input-submit:hover {
+    background-color: #ffffff20;
+}
+
+
+
+
+/* Restaurants component */
+
+.Restaurants {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 70px);
+}
+
+.Restaurants .list {
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.Card {
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+    width: 100%;
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px #00000090;
+    overflow: hidden;
+}
+
+.Card .image {
+    width: 200px;
+    height: 100%;
+    background-color: #540B0E;
+    position: relative;
+}
+
+.Card .image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Card .main {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffe6;
+}
+
+.Card .main-title {
+    font-family: 'Gotham Pro Bold';
+    font-size: 27px;
+    color: #540B0E;
+    margin-bottom: 8px;
+}
+
+.Card .main-address {
+    color: #a4a4a4;
+}
+.Card .main-address, .Card .main-description {
+    font-family: 'Gotham Pro Light';
+    font-size: 17px;
+}
+.Card .main-description {
+    margin-top: auto;
+    line-height: 1.2;
+    color: #540B0E;
+}
+
+.Card .main-more-info{
+    font-family: 'Gotham Pro Medium';
+    background-color: #fff;
+    border: none;
+    color: #540B0E;
+    font-size: 15px;
+    padding: 10px 25px 10px;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    transition: 200ms;
+    width: fit-content;
+    margin-top: auto;
+}
+
+.Card .main-more-info:hover{
+    box-shadow: 0px 4px 7px #0000007a;
+}
+
+.Card .info {
+    padding: 10px 0;
+    width: 200px;
+    height: 100%;
+    background-color: #9E2A2B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.Card .info .row {
+    margin: 10px;
+    font-family: 'Gotham Pro Bold';
+    color: #fff;
+    font-size: 18px
+}
+
+.Card .info .row i {
+    margin-right: 10px;
+}
+
+
+.restaurant-card-wrap {
+    padding: 20px;
+}
+
+.restaurant-card {
+    font-family: 'Gotham Pro Medium';
+    background-color: #ffffffe6;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 500px;
+    opacity: 0;
+    animation: fadeIn;
+    animation-duration: 1000ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+
+/* Meals list */
+.Meals {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 70px);
+    animation-name: fadeInMove;
+    animation-duration: 1000ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.Meals .list {
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.Meals .list .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loadMore {
+    font-family: 'Gotham Pro Medium';
+    background-color: #ffffffe1;
+    box-shadow: 0px 4px 10px #0000007a;
+    border: none;
+    color: #540B0E;
+    font-size: 18px;
+    padding: 13px 25px 10px;
+    margin: 20px 0;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    transition: 200ms;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 500ms;
+
+}
+
+.loadMore:hover{
+    box-shadow: 0px 8px 15px #00000086;
+}
+
+
+/* Meal Card */
+
+.MealCard {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffffe1;
+    height: 100%;
+    min-height: 70px;
+    width: 100%;
+    margin: 11px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px #00000090;
+    overflow: hidden;
+    opacity: 0;
+    animation-name: fadeInMove;
+    animation-duration: 800ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    font-family: 'Rubik';
+    font-weight: 400;
+
+}
+
+.meals-config {
+    height: 32px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.meals-count {
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+    font-family: "Gotham Pro Medium"
+}
+.meals-count span{
+    margin-left: 10px;
+    font-size: 14px;
+    font-family: "Gotham Pro"
+}
+
+.meal-order {
+    display: flex;
+    align-items: center;
+}
+
+.meal-order span{
+    color: #fff;
+    width: 100px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.meal-order .order-option{
+    margin: 0px 5px;
+    background-color: #ffffff20;
+    font-size: 15px;
+    color: #fff;
+    width: 80px;
+    padding: 7px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.meal-order .order-option:hover{
+    background-color: #ffffff30;
+}
+
+.meal-order .order-option-active{
+    background-color: #540B0E;
+}
+
+.meal-order .order-option-active:hover{
+    background-color: #4e0a0d;
+}
+
+.meal-order .order-option:nth-last-child(1){
+    margin-right: 0;
+}
+
+.meal-order .order-option i{
+    margin-left: 3px;
+    pointer-events: none
+}
+
+.meal-order .order-option-clear {
+    width: 40px ;
+}
+ 
+.meal-order .order-option-clear:active {
+    background-color: #1b1f2a;
+}
+
+
+.mealcard-main-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.mealcard-main {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+.mealcard-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    background-color: #d3d3d3e1;
+}
+
+.mealcard-number span {
+    transform: rotate(-90deg);
+    color: #1b1f2a60;
+    font-size: 16px;
+    font-family: "Gotham Pro Medium";
+}
+
+.mealcard-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    flex: 1;
+}
+
+.mealcard-title span{
+    margin-left: 20px;
+    color: #000;
+    font-size: 23px;
+    font-family: 'Rubik';
+    font-weight: 400;
+}
+
+.mealcard-action {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #540B0E;
+}
+
+.mealcard-price {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 110px;
+    background-color: #540B0E;
+}
+
+.mealcard-price span {
+    border-radius: 8px;
+    padding: 10px 0;
+    color: #fff;
+    width: 100%;
+    margin-left: 15px;
+    font-size: 22px;
+    font-family: 'Rubik';
+}
+
+.mealcard-price span i{
+    font-style: normal;
+    font-size: 15px;
+    margin-left: 10px;
+    color: #ffffff90;
+}
+
+.mealcard-more {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50px;
+    background-color: #540B0E;
+    transition: 200ms;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.mealcard-more i{
+    border-left: 1px solid #ffffff30;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+
+}
+.mealcard-more:hover{
+    background-color: #49090c;
+}
+
+
+
+.mealcard-detail {
+    padding: 0 20px 20px;
+}
+
+.mealcard-descr {
+    margin-right: 140px;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #000000a1;
+}
+
+.mealcard-restaurant {
+    padding: 15px 25px;
+    margin-top: 65px;
+    font-size: 17px;
+    background-color: #1b1f2a;
+    color: #ffffffa1;
+    display: inline-block;
+    font-family: 'Rubik';
+    font-weight: 400;
+}
+
+.mealcard-restaurant a{
+    margin-left: 7px;
+    color: #fff;
+}
+.mealcard-restaurant:hover a{
+    text-decoration: underline;
+}
+
+
+
+/* restaurant detail page */
+
+
+.Restaurant .back-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Gotham Pro Medium';
+    background-color: #1b1f2a;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 25px 10px;
+    outline: none;
+    cursor: pointer;
+    transition: 200ms;
+    width: fit-content;
+}
+
+.Restaurant .back-button:hover {
+    box-shadow: 0px 2px 7px #00000060;
+}
+
+.Restaurant .back-button i {
+    margin-right: 5px;
+}
+
+.Restaurant p {
+    color: #fff;
+}
+
+.Restaurant .restaurant-toprow {
+    display: flex;
+    height: 36px;
+    position: relative;
+    justify-content: center;
+}
+
+.Restaurant .title {
+    color: #540B0E;
+    line-height: 36px;
+    font-family: 'Rubik';
+    font-weight: 400;
+}
+
+
+.restaurant-main {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Rubik';
+    font-weight: 400;
+}
+
+.restaurant-descr {
+    padding: 20px 20px 20px 0;
+    color: #1b1f2aa1;
+    line-height: 1.4;
+}
+
+.restaurant-info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100%;
+    min-width: 280px;
+    background-color: #1b1f2a;
+    align-items: center;
+}
+
+.info-row {
+    box-sizing: border-box;
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 17px;
+}
+.info-row:nth-last-child(1) {
+    margin: 0;
+}
+
+.info-row a{
+    line-height: 35px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #540B0E;
+    font-family: 'Gotham Pro Medium'
+}
+
+.restaurant-menu {
+    margin-top: 100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.restaurant-menu-title {
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    background-color: #540B0E
+}
+
+
+/* Dish */
+
+.restaurant-menu .Dish{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    min-height: 70px;
+    padding: 15px 0;
+    color: #1b1f2a;
+    border-bottom: 2px solid #00000010;
+    font-family: 'Rubik';
+    font-weight: 400;
+}
+
+.restaurant-menu .dish-number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+
+}
+
+.restaurant-menu .dish-number span{
+    color: #1b1f2aa1;
+    transform: rotate(-90deg);
+    font-family: 'Gotham Pro Medium'
+}
+
+.restaurant-menu .dish-main {
+    margin-left: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.restaurant-menu .dish-title {
+    font-size: 20px;
+    color: #1b1f2a;
+}
+
+.restaurant-menu .dish-descr {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #1b1f2a7a;
+    line-height: 1.3;
+}
+
+.dish-price {
+    width: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 22px;
+    color: #540B0E;
+    font-family: 'Gotham Pro'
+}
+
+.dish-price span {
+    font-size: 15px;
+    margin-left: 5px;
+    color: #1b1f2aa1;
+}
+
+
