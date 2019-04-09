@@ -1,13 +1,21 @@
 ### react-django-restaurants-app
 
+
+### stack
+* React.js
+* context api
+* Django
+* django rest framework
+
 ### features
 * search dishes in Wroclaw restaurants
 * browse restaurants menu
 * get restaurants location
 
 
-#### preview
 
+#### preview
+<img src="./preview.gif" width="800px" />
 ___
 ### install
 
