@@ -38,4 +38,7 @@ python manage.py runserver
 ```
 npm run dev
 ```
+```
+open localhost:8000
+```
 ___
